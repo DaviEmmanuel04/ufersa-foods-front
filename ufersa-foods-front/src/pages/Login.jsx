@@ -4,7 +4,7 @@ import { Box, Button } from '@mui/material';
 import { useState } from 'react';
 import axios from 'axios'
 import { Link, Navigate } from 'react-router-dom';
-import Logo from '../assets/Logo.png'
+import logo from '../assets/logo.png'
 
 const api_url = import.meta.env.VITE_API_USERS
 
@@ -40,7 +40,7 @@ function Login() {
     }
   return (
     <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        <img style={{marginTop: '104px'}} src={Logo} alt="" />
+        <img style={{marginTop: '104px'}} src={logo} alt="" />
         <Box sx={{display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%', padding: '57px'}}>
             <TextField value={email} onChange={onChangeEmail} sx={{marginBottom: '50px', width: '100%'}} variant='standard' label='E-mail' type='email' />
             <TextField value={password} onChange={onChangePassword} sx={{marginBottom: '50px', width: '100%'}} variant='standard' label='Senha' type='password'/>
