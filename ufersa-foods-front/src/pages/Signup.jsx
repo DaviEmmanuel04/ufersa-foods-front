@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import { Box, Button } from '@mui/material';
 import { useState } from 'react';
 import axios from 'axios'
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import logo from '../assets/logo.png'
 
 const api_url = import.meta.env.VITE_API_USERS
@@ -55,8 +55,10 @@ function Signup() {
         <TextField value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} sx={{ marginBottom: '50px', width: '100%' }} variant='standard' label='Confirmar senha' type='password' />
 
 
-        <Button onClick={login} variant='contained' sx={{ marginBottom: '15px', width: '100%' }}>Entrar</Button>
-        <Button variant='outlined' sx={{ width: '100%' }}>Criar conta</Button>
+        <Button onClick={login} variant='contained' sx={{ marginBottom: '15px', width: '100%' }}>Criar conta</Button>
+        <Link to={'/login'} style={{width: '100%'}}>
+          <Button variant='outlined' sx={{ width: '100%' }}>Já tenho uma conta</Button>
+        </Link>
       </Box>
 
       {token && <Navigate to={'/'} />}

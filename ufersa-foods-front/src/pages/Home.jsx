@@ -36,9 +36,11 @@ function Home() {
     }, [])
 
     useEffect(() => {
-        const {id} = JSON.parse(atob(token.split('.')[1]))
-        const url = `${api_url}/like/${id}`
-        getLikes(url)
+        if(token) {
+            const {id} = JSON.parse(atob(token.split('.')[1]))
+            const url = `${api_url}/like/${id}`
+            getLikes(url)
+        }
     }, [])
 
     return (
